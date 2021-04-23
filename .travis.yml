@@ -1,3 +1,0 @@
-language: go
-script: go get github.com/ModEtchFill/base-i && go test github.com/ModEtchFill/base-i/aTest
-
