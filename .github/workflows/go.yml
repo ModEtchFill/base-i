@@ -15,8 +15,8 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: 1.15
-      - run: mkdir -p ${{ env.GOPATH }}/src/github.com/ModEtchFill
-      - run: ln -s /home/runner/work/base-i/base-i ${{ env.GOPATH }}/src/github.com/ModEtchFill
+      - run: mkdir -p /home/runner/go/src/github.com/ModEtchFill
+      - run: ln -s /home/runner/work/base-i/base-i /home/runner/go/src/github.com/ModEtchFill
       - name: Build
         run: go build -v github.com/ModEtchFill/base-i/...
       - name: Test basic
