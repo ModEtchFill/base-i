@@ -11,13 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-  
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
           go-version: 1.15
-  
+      - run: mkdir -p $GOPATH/src/github.com/ModEtchFill
+      - run: ln -s /home/runner/work/base-i/base-i $GOPATH/src/github.com/ModEtchFill
       - name: Build
-        run: go build -v ./...
+        run: go build -v github.com/ModEtchFill/base-i/...
       - name: Test basic
-        run: go test -v ./...
+        run: go test -v github.com/ModEtchFill/base-i/...
