@@ -19,10 +19,9 @@ jobs:
       - name: Manual go1.20
         run: wget -nv https://go.dev/dl/go1.20.7.linux-amd64.tar.gz
       - run: sed -e 's,http.*/,,' SHA256 | sha256sum -c
-      - run: tar zxfv go1.20.7.linux-amd64.tar.gz
-      - run: pwd
+      - run: tar zxf go1.20.7.linux-amd64.tar.gz
       - name: End - Manual go1.20
-        run: /home/runner/go/bin/go version
+        run: /home/runner/work/base-i/base-i/go/bin/go version
 
       - name: Setup github go paths for proper library locations
         run: mkdir -p /home/runner/go/{src/github.com/ModEtchFill,cover}
@@ -30,10 +29,10 @@ jobs:
         run: ln -s /home/runner/work/base-i/base-i /home/runner/go/src/github.com/ModEtchFill
 
       - name: Build
-        run: /home/runner/go/bin/go build -v ./...
+        run: /home/runner/work/base-i/base-i/go/bin/go build -v ./...
       - name: Test a
-        run: /home/runner/go/bin/go test -v -coverprofile /home/runner/go/cover/a github.com/ModEtchFill/base-i/aTest
+        run: /home/runner/work/base-i/base-i/go/bin/go test -v -coverprofile /home/runner/go/cover/a github.com/ModEtchFill/base-i/aTest
       - name: Test b
-        run: /home/runner/go/bin/go test -v -coverprofile /home/runner/go/cover/b github.com/ModEtchFill/base-i/bTest
+        run: /home/runner/work/base-i/base-i/go/bin/go test -v -coverprofile /home/runner/go/cover/b github.com/ModEtchFill/base-i/bTest
       - name: Cov
-        run: /home/runner/go/bin/go tool covdata percent -i=/home/runner/go/cover
+        run: /home/runner/work/base-i/base-i/go/bin/go tool covdata percent -i=/home/runner/go/cover
