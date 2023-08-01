@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  go-ctrd:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,9 +19,11 @@ jobs:
   
       - name: Build
         run: go build -v ./...
+      - name: Test basic
+        run: go test -v ./...
 
       - name: Test with Go
-        run: go test -json > TestResults-${{ matrix.go-version }}.json
+        run: go test -json ./... > TestResults-${{ matrix.go-version }}.json
       - name: Upload Go test results
         uses: actions/upload-artifact@v3
         with:
