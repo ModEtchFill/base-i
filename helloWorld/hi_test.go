@@ -4,7 +4,7 @@ import (
 	"testing"
 	)
 func TestSomethingB(t *testing.T) {
-	fmt.Printf("Test b Something\n")
+	fmt.Printf("Test hi Something\n")
 	if 1 == 0 {
 		t.Errorf("test fail")
 	}
