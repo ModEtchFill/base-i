@@ -1,4 +1,4 @@
-package aTest
+package main
 import (
 	"fmt"
 	"testing"
