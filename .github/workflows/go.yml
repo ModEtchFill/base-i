@@ -19,5 +19,7 @@ jobs:
       - run: ln -s /home/runner/work/base-i/base-i /home/runner/go/src/github.com/ModEtchFill
       - name: Build
         run: go build -v ./...
-      - name: Test basic
-        run: go test -v ./...
+      - name: Test a
+        run: go test -v github.com/ModEtchFill/base-i/aTest
+      - name: Test b
+        run: go test -v github.com/ModEtchFill/base-i/bTest
