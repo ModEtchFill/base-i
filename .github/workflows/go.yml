@@ -18,6 +18,6 @@ jobs:
       - run: mkdir -p /home/runner/go/src/github.com/ModEtchFill
       - run: ln -s /home/runner/work/base-i/base-i /home/runner/go/src/github.com/ModEtchFill
       - name: Build
-        run: go build -v github.com/ModEtchFill/base-i/helloWorld
+        run: go build -v ./...
       - name: Test basic
-        run: go test -v github.com/ModEtchFill/base-i/bTest
+        run: go test -v ./...
