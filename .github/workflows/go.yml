@@ -28,8 +28,6 @@ jobs:
       - name: End - Setup github go paths
         run: ln -s /home/runner/work/base-i/base-i /home/runner/go/src/github.com/ModEtchFill
 
-      - name: Build
-        run: /home/runner/work/base-i/base-i/go/bin/go build -v ./...
       - name: Test a
         run: /home/runner/work/base-i/base-i/go/bin/go test -v -coverprofile /home/runner/go/cover/a github.com/ModEtchFill/base-i/aTest
       - name: Test b
